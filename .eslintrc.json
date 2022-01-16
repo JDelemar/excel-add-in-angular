@@ -1,0 +1,14 @@
+{
+  "globals": {
+    "Excel": "readonly",
+    "Office": "readonly",
+    "OfficeExtension": "readonly"
+  },
+  "plugins": [
+    "office-addins"
+  ],
+  "extends": [
+    "plugin:office-addins/recommended",
+    "plugin:prettier/recommended"
+  ]
+}

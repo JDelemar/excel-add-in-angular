@@ -5,6 +5,8 @@ Excel AddIn using Angular
 ## Notes
 
 - Notes
+  - TODO
+    - Update angular to latest
   - Creating from scratch
 
     ```s

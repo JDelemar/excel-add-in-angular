@@ -5,16 +5,87 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Excel Desktop (Edge Chromium)",
-      "type": "edge",
+      "name": "Attach by Process ID",
+      "processId": "${command:PickProcess}",
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Attach to Node",
+      "port": 9229,
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug UI Tests",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "-u",
+        "bdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/test/end-to-end",
+        "-r",
+        "ts-node/register",
+        "${workspaceFolder}/test/end-to-end/*.ts"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "runtimeArgs": [
+        "--preserve-symlinks"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Unit Tests",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "-u",
+        "bdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/test/unit",
+        "-r",
+        "ts-node/register",
+        "${workspaceFolder}/test/unit/*.test.ts"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "runtimeArgs": [
+        "--preserve-symlinks"
+      ]
+    },
+    {
+      "name": "Excel Desktop (Chrome)",
+      "type": "chrome",
       "request": "attach",
       "useWebView": "advanced",
       "port": 9229,
       "timeout": 600000,
       "webRoot": "${workspaceRoot}",
-      "preLaunchTask": "Debug: Excel Desktop",
-      "postDebugTask": "Stop Debug"
+      // "preLaunchTask": "Debug: Excel Desktop",
+      // "postDebugTask": "Stop Debug"
     },
+    // {
+    //   "name": "Excel Desktop (Edge Chromium)",
+    //   "type": "edge",
+    //   "request": "attach",
+    //   "useWebView": "advanced",
+    //   "port": 9229,
+    //   "timeout": 600000,
+    //   "webRoot": "${workspaceRoot}",
+    //   "preLaunchTask": "Debug: Excel Desktop",
+    //   "postDebugTask": "Stop Debug"
+    // },
     {
       "name": "Excel Desktop (Edge Legacy)",
       "type": "office-addin",
@@ -26,17 +97,17 @@
       "preLaunchTask": "Debug: Excel Desktop",
       "postDebugTask": "Stop Debug"
     },
-    {
-      "name": "Outlook Desktop (Edge Chromium)",
-      "type": "edge",
-      "request": "attach",
-      "useWebView": "advanced",
-      "port": 9229,
-      "timeout": 600000,
-      "webRoot": "${workspaceRoot}",
-      "preLaunchTask": "Debug: Outlook Desktop",
-      "postDebugTask": "Stop Debug"
-    },
+    // {
+    //   "name": "Outlook Desktop (Edge Chromium)",
+    //   "type": "edge",
+    //   "request": "attach",
+    //   "useWebView": "advanced",
+    //   "port": 9229,
+    //   "timeout": 600000,
+    //   "webRoot": "${workspaceRoot}",
+    //   "preLaunchTask": "Debug: Outlook Desktop",
+    //   "postDebugTask": "Stop Debug"
+    // },
     {
       "name": "Outlook Desktop (Edge Legacy)",
       "type": "office-addin",
@@ -48,17 +119,17 @@
       "preLaunchTask": "Debug: Outlook Desktop",
       "postDebugTask": "Stop Debug"
     },
-    {
-      "name": "PowerPoint Desktop (Edge Chromium)",
-      "type": "edge",
-      "request": "attach",
-      "useWebView": "advanced",
-      "port": 9229,
-      "timeout": 600000,
-      "webRoot": "${workspaceRoot}",
-      "preLaunchTask": "Debug: PowerPoint Desktop",
-      "postDebugTask": "Stop Debug"
-    },
+    // {
+    //   "name": "PowerPoint Desktop (Edge Chromium)",
+    //   "type": "edge",
+    //   "request": "attach",
+    //   "useWebView": "advanced",
+    //   "port": 9229,
+    //   "timeout": 600000,
+    //   "webRoot": "${workspaceRoot}",
+    //   "preLaunchTask": "Debug: PowerPoint Desktop",
+    //   "postDebugTask": "Stop Debug"
+    // },
     {
       "name": "PowerPoint Desktop (Edge Legacy)",
       "type": "office-addin",
@@ -70,17 +141,17 @@
       "preLaunchTask": "Debug: PowerPoint Desktop",
       "postDebugTask": "Stop Debug"
     },
-    {
-      "name": "Word Desktop (Edge Chromium)",
-      "type": "edge",
-      "request": "attach",
-      "useWebView": "advanced",
-      "port": 9229,
-      "timeout": 600000,
-      "webRoot": "${workspaceRoot}",
-      "preLaunchTask": "Debug: Word Desktop",
-      "postDebugTask": "Stop Debug"
-    },
+    // {
+    //   "name": "Word Desktop (Edge Chromium)",
+    //   "type": "edge",
+    //   "request": "attach",
+    //   "useWebView": "advanced",
+    //   "port": 9229,
+    //   "timeout": 600000,
+    //   "webRoot": "${workspaceRoot}",
+    //   "preLaunchTask": "Debug: Word Desktop",
+    //   "postDebugTask": "Stop Debug"
+    // },
     {
       "name": "Word Desktop (Edge Legacy)",
       "type": "office-addin",
