@@ -2,7 +2,16 @@
 
 Excel AddIn using Angular
 
-## Notes
+## Quick start
+
+- Quick start
+  - Clone
+  - Install packages `npm install`
+  - Run `npm start`
+  - When the Excel application opens click the add-in in the top right `Commands Group` window
+  - Select a couple of cells then click `Run`. The selected cells will turn yellow
+
+### Notes
 
 - Notes
   - TODO
@@ -58,7 +67,7 @@ Excel AddIn using Angular
           Error: EXDEV: cross-device link not permitted, link 'manifest.xml' -> '/Users/delemar/Library/Containers/com.microsoft.Excel/Data/Documents/wef/932f2091-e778-4b46-9675-4d51991a6463.manifest.xml'
         ```
 
-### References
+#### References
 
 - References
   - [Yeoman generator for Office Add-ins - YO OFFICE!](https://github.com/OfficeDev/generator-office)
